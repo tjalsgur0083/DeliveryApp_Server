@@ -1,12 +1,12 @@
-import express, { Express, Request, Response } from 'express';
+import express, {Express, Request, Response} from 'express';
 
 const app: Express = express();
 const port = 3000;
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Typescript + Node.js + Express Server');
+app.get('/', (req: Request ,res: Response) => {
+  res.send('ok');
 });
 
 app.listen(port, () => {
-  console.log(`[server]: Server is running at <http://localhost>:${port}`);
+  console.log('Server running at <http://127.0.0.1>: ${port}');
 });
