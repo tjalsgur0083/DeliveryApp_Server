@@ -8,7 +8,6 @@ const app = (0, express_1.default)();
 const port = 3000;
 app.get('/', (req, res) => {
     res.send('ok');
+    console.log('<http://localhost>: ${port}');
 });
-app.listen(port, () => {
-    console.log('Server running at <http://127.0.0.1>: ${port}');
-});
+app.listen(port);
