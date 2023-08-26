@@ -23,6 +23,8 @@ app.get('/user_table', async (req: Request, res: Response) => {
     const query = "SELECT * FROM user_table";
     const [results] = await connection.query(query);
 
+    console.log('<http://localhost:3000/user_table>');
+
     connection.release();
     res.json(results);
   } catch (err) {

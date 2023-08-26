@@ -32,6 +32,7 @@ app.get('/user_table', (req, res) => __awaiter(void 0, void 0, void 0, function*
         const connection = yield pool.getConnection();
         const query = "SELECT * FROM user_table";
         const [results] = yield connection.query(query);
+        console.log('<http://localhost:3000/user_table>');
         connection.release();
         res.json(results);
     }
