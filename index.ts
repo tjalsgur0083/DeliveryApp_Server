@@ -16,7 +16,7 @@ app.listen(port, () => {
   console.log('Server is running on port ${port}');
 });
 
-app.get('/user_table', async (req: Request, res: Response) => {
+app.post('/user_table', async (req: Request, res: Response) => {
   try {
     const connection = await pool.getConnection();
 
@@ -33,7 +33,7 @@ app.get('/user_table', async (req: Request, res: Response) => {
   }
 });
 
-app.get('/', (req: Request ,res: Response) => {
+app.post('/', (req: Request ,res: Response) => {
   res.send('running test');
   console.log('<http://localhost>: ${port}');
 });

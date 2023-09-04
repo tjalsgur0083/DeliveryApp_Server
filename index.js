@@ -27,7 +27,7 @@ const pool = promise_1.default.createPool({
 app.listen(port, () => {
     console.log('Server is running on port ${port}');
 });
-app.get('/user_table', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.post('/user_table', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const connection = yield pool.getConnection();
         const query = "SELECT * FROM user_table";
@@ -41,7 +41,7 @@ app.get('/user_table', (req, res) => __awaiter(void 0, void 0, void 0, function*
         res.status(500).json({ error: '유저 정보 가져오기 실패' });
     }
 }));
-app.get('/', (req, res) => {
+app.post('/', (req, res) => {
     res.send('running test');
     console.log('<http://localhost>: ${port}');
 });
