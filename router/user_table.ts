@@ -29,26 +29,5 @@ router.post('/user_login', (req: Request, res: Response) => {
       }
     )
 });
-  
-
-
-
-// router.post('/user_login', async (req: Request, res: Response) => {
-//     const {EMAIL, PASSWORD} = req.body;
-
-//     pool.query('SELECT * FROM user_table WHERE EMAIL = "${EMAIL}"', (error, result) => {
-//         if (error) return console.log(error);
-
-//         if(result.length) {
-//             console.log(result);
-//             if(result[0].PASSWORD === PASSWORD) {
-//                 console.log('login success: '+ EMAIL);
-//                 console.log('password '+ PASSWORD);
-//             } else {
-//                 console.log('retry');
-//             }
-//         }
-//     });
-// });
 
 export default router;
