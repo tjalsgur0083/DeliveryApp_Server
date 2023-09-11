@@ -19,33 +19,13 @@ router.post('/user_login', (req, res) => {
             return;
         }
         if (results.length === 1) {
-            //successful
-            res.status(200).json({ message: '로그인 성공' });
             if (results[0].PASSWORD === PASSWORD) {
-                console.log('login success'); //
+                res.status(200).json({ message: 'login success' });
             }
-            else { //
-                console.log('retry'); //
+            else {
+                res.status(401).json({ message: '로그인 실패' });
             }
         }
     });
-    // pool.query(
-    //   'SELECT * FROM user_table WHERE EMAIL = ? AND PASSWORD = ?',
-    //   [EMAIL, PASSWORD],
-    //   (err, results) => {
-    //     if (err) {
-    //       console.error('데이터베이스 오류:', err);
-    //       res.status(500).json({ message: '서버 오류' });
-    //       return;
-    //     }
-    //     if (results.length === 1) {
-    //       // 로그인 성공
-    //       res.status(200).json({ message: '로그인 성공' });
-    //     } else {
-    //       // 로그인 실패
-    //       res.status(401).json({ message: '로그인 실패' });
-    //     }
-    //   }
-    // )
 });
 exports.default = router;
