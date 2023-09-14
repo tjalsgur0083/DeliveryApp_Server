@@ -4,10 +4,12 @@ import pool from '../index';
 const router: Router = express.Router();
 
 router.post('/user_login', (req: Request, res: Response) => {
-    const { EMAIL, PASSWORD } = req.body;
+    const { EMAIL, PASSWORD} = req.body;
       console.log("connect request");
       console.log("EMAIL : " + EMAIL);
-      console.log("PASSWORD : " + PASSWORD)
+      console.log("PASSWORD : " + PASSWORD);
+
+      //console.log("NAME : "+ NAME);
     // 데이터베이스에서 사용자 정보를 조회하여 인증 수행
 
     pool.query(

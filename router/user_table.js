@@ -11,6 +11,7 @@ router.post('/user_login', (req, res) => {
     console.log("connect request");
     console.log("EMAIL : " + EMAIL);
     console.log("PASSWORD : " + PASSWORD);
+    //console.log("NAME : "+ NAME);
     // 데이터베이스에서 사용자 정보를 조회하여 인증 수행
     index_1.default.query('SELECT * FROM user_table WHERE EMAIL = ?', [EMAIL], (err, results) => {
         if (err) {
